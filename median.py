@@ -1,18 +1,11 @@
 from heapq import heapify, heappush, heappop
 
 class MedianFinder(object):
-	def __init__(self, x, y):
+	def __init__(self):
 		self.minHeap = []
 		heapify(self.minHeap)
 		self.maxHeap = []
 		heapify(self.maxHeap)
-
-		if x < y:
-			self.pushMax(x)
-			self.pushMin(y)
-		else:
-			self.pushMax(y)
-			self.pushMin(x)
 	def pushMax(self, val):
 		heappush(self.maxHeap, float(-1 * val))
 	def pushMin(self,val):
@@ -30,17 +23,27 @@ class MedianFinder(object):
 		heappop(self.maxHeap)
 		return x
 	def addData(self, x): #assumes x is an integer
-		if x < self.topMax():
+		if not (len(self.maxHeap) or len(self.minHeap)):
 			self.pushMax(x)
+		elif len(self.maxHeap) == 1 and not len(self.minHeap) :
+			if x > self.topMax():
+				self.pushMin(x)
+			else:
+				y = self.popMax()
+				self.pushMax(x)
+				self.pushMin(y)
 		else:
-			self.pushMin(x)
-		#balance!
-		if len(self.maxHeap) > len(self.minHeap):
-			y = self.popMax()
-			self.pushMin(y)
-		if len(self.minHeap ) > len(self.maxHeap):
-			y = self.popMin()
-			self.pushMax(y)
+			if x < self.topMax():
+				self.pushMax(x)
+			else:
+				self.pushMin(x)
+			#balance!
+			if len(self.maxHeap) > len(self.minHeap):
+				y = self.popMax()
+				self.pushMin(y)
+			if len(self.minHeap ) > len(self.maxHeap):
+				y = self.popMin()
+				self.pushMax(y)
 	def getMedian(self):
 		if len(self.maxHeap) > len(self.minHeap):
 			return self.topMax()
@@ -48,8 +51,3 @@ class MedianFinder(object):
 			return self.topMin()
 		else:
 			return (self.topMax() + self.topMin() )/2
-
-m = MedianFinder(1,2)
-m.addData(4)
-m.addData(4)
-print m.getMedian()
