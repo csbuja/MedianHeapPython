@@ -44,7 +44,9 @@ class MedianFinder(object):
 			if len(self.minHeap ) > len(self.maxHeap):
 				y = self.popMin()
 				self.pushMax(y)
-	def getMedian(self):
+	def getMedian(self): # returns None if no data has been given to the median finder
+		if len(self.maxHeap)==0 and len(self.minHeap)==0:
+			return
 		if len(self.maxHeap) > len(self.minHeap):
 			return self.topMax()
 		elif len(self.minHeap ) > len(self.maxHeap):
