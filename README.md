@@ -12,5 +12,5 @@ medianCalculator.addData(d1)
 medianCalculator.addData(d2)
 medianCalculator.addData(d3)
 
-medianCalculator.getMedian() //returns the median very efficiently
+medianCalculator.getMedian() #returns the median very efficiently
 ```
