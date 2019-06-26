@@ -8,7 +8,7 @@ def contentsOfReadMe():
 
 setup(
     name='MedianHeapPython',
-    version='1.0.4',
+    version='1.0.6',
     packages=["MedianHeapPython"],
     description='Calculates the median of a data stream in O(log n) time using a heap!',
     long_description=contentsOfReadMe(),

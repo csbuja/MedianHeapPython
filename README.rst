@@ -20,5 +20,5 @@ Usage
     >>> medianCalculator.addData(d1)
     >>> medianCalculator.addData(d2)
     >>> medianCalculator.addData(d3)
-    >>> print(medianCalculator.getMedian())  # 3
+    >>> print(medianCalculator.getMedian())  # 2
     >>> print()
