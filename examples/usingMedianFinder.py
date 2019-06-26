@@ -1,4 +1,4 @@
-from MedianFinder.medianFinder import MedianFinder
+from MedianHeapPython.medianFinder import MedianFinder
 
 ###
 # Example 1.
