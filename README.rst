@@ -1,4 +1,4 @@
-Median Heap Python
+A Median Heap in Python
 ===================================
 A simple program to take medians using a heap data structure.
 
