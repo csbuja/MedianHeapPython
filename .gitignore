@@ -276,6 +276,7 @@ __pycache__/
 *.pyc
 *.egg-info/
 dist/
+MANIFEST
 
 # Cake - Uncomment if you are using it
 # tools/**
