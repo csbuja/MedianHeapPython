@@ -11,20 +11,14 @@ What It Does
 
 
 Usage
-
-.. highlight:: python
-
-::
-   from MedianHeapPython.medianFinder import MedianFinder
-
-    d1 = 1
-    d2 = 2
-    d3 = 3
-
-    medianCalculator = MedianFinder()
-    medianCalculator.addData(d1)
-    medianCalculator.addData(d2)
-    medianCalculator.addData(d3)
-
-    print(medianCalculator.getMedian())  # 3
-    print()
+------------
+    >>> from MedianHeapPython.medianFinder import MedianFinder
+    >>> d1 = 1
+    >>> d2 = 2
+    >>> d3 = 3
+    >>> medianCalculator = MedianFinder()
+    >>> medianCalculator.addData(d1)
+    >>> medianCalculator.addData(d2)
+    >>> medianCalculator.addData(d3)
+    >>> print(medianCalculator.getMedian())  # 3
+    >>> print()
